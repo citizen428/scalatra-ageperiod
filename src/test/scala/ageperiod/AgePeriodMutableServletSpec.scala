@@ -13,11 +13,11 @@ class AgePeriodMutableServletSpec extends MutableScalatraSpec {
     }
   }
   
-  /*"A GET request on /period" should {
+  "A GET request on /period" should {
     "should return a formatted period for valid input" in {
       get("/period/20000101") {
         status must_== 200
-        body must beMatching("\\d+ years?, \\d+ months?, \\d+ weeks? and \\d+ days?")
+        body must contain("year")
 
       }
     }
@@ -25,9 +25,9 @@ class AgePeriodMutableServletSpec extends MutableScalatraSpec {
     "should return \"Invalid date\" for bad input" in {
       get("/period/20120230") {
         status must_== 200
-        body must beMatching(".*Invalid date.*")
+        body must contain("Invalid date")
       }
-    }*/
+    }
   }
   
 }
