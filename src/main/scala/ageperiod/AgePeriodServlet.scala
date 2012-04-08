@@ -33,7 +33,7 @@ class AgePeriodServlet extends ScalatraServlet with ScalateSupport {
     val date1 = try {
       inputFormatter.parseDateTime(date).toLocalDate
     } catch {
-      case e: IllegalFieldValueException => return "Invalid date"
+      case e: IllegalArgumentException => return "Invalid date"
     }
 
     val date2 = new DateTime().toLocalDate

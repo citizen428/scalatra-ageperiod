@@ -1,4 +1,5 @@
+%h1 Enter your birthday
 %form{:name => "datepicker", :id => "datepicker", :action => "/period", :method => "post"}
-  Your birthday:
-  %input{:type => "text", :name => "date", :id => "date", :class => "text"}
-  %input{:type => "submit", :value => "Send", :class => "button"}
+  %input{:type => "text", :name => "date", :id => "date", :class => "text", :placeholder => "YYYYMMDD"}
+  %br
+  %input{:type => "submit", :value => "How old am I?", :class => "button"}

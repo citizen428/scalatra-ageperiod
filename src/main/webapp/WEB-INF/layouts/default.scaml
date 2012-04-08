@@ -1,9 +1,11 @@
 -@ val body:String
+
 !!! 5
 %html
   %head
     %title How old are you?
-    %link(rel="stylesheet" href={uri("/css/sunny/jquery-ui-1.8.17.custom.css")})
+    %link(rel="stylesheet" type="text/css" href="css/style.css")
+    %link(rel="stylesheet" type="text/css" href="css/sunny/jquery-ui-1.8.17.custom.css")
     %script(type="text/javascript" src={uri("/js/jquery-1.7.1.min.js")})
     %script(type="text/javascript" src={uri("/js/jquery-ui-1.8.17.custom.min.js")})
     :javascript
@@ -14,7 +16,10 @@
           dateFormat: 'yymmdd',
           minDate: new Date(1890, 1, 1),
           maxDate: new Date(),
-          yearRange: 'c-120:c'
+          yearRange: 'c-120:c',
+          onSelect: function (dateText, inst) {
+            $(this).parent('form').submit();
+          }
         });
       });
 
